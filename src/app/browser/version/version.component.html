@@ -1,0 +1,23 @@
+<div class="box">
+          
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody><tr>
+                  <th style="width: 10px">#</th>
+                  <th>名称</th>
+                  <th>评级</th>
+                  <th>市场占比</th>
+                </tr>
+                <tr *ngFor="let version of browserVersions;let i=index;">
+                  <td>{{i+1}}</td>
+                  <td>{{version.name}}</td>
+                  <td>
+                    <app-star [rating]="version.rating"></app-star>
+                  </td>
+                  <td><span class="badge bg-green">{{version.percent | percent:2}}</span></td>
+                </tr>
+              </tbody></table>
+            </div>
+            <!-- /.box-body -->
+          </div>

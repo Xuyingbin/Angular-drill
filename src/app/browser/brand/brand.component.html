@@ -1,0 +1,31 @@
+<div class="box">
+          
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table class="table table-striped">
+                <tbody><tr>
+                  <th style="width: 10px">#</th>
+                  <th>名称</th>
+                  <th>评级</th>
+                  <th>市场占比</th>
+                  <th>操作</th>
+                </tr>
+                <tr *ngFor="let brand of browserBrands;let i=index;">
+                  <td>{{i+1}}</td>
+                  <td>{{brand.name}}</td>
+                  <td>
+                    <app-star [rating]="brand.rating"></app-star>
+                  </td>
+                  <td><span class="badge bg-green">{{brand.percent | percent:2}}</span></td>
+                  <td>
+                    <button type="button" class="btn btn-xs btn-info" (click)="navDetail(brand);" >详情</button>
+                  </td>
+                </tr>
+              </tbody></table>
+              
+            </div>
+
+            
+            <!-- /.box-body -->
+          </div>
+          <router-outlet></router-outlet>

@@ -1,0 +1,11 @@
+<div class="nav-tabs-custom">
+            <!-- Tabs within a box -->
+            <ul class="nav nav-tabs pull-right ui-sortable-handle">
+              <li class="active" *ngFor="let menu of menus;" (click)="nav(menu)" [class.active]="menu.id == menuId"><a href="javascript:;">{{menu.name}}</a></li>
+            </ul>
+            <div class="tab-content no-padding">
+              <!-- Morris chart - Sales -->  
+              <router-outlet></router-outlet>  
+            
+            </div>
+</div>
